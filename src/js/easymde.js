@@ -16,7 +16,9 @@ var marked = require('marked').marked;
 
 
 // Some variables
-var isMac = /Mac/.test(navigator.platform);
+if (typeof navigator !== 'undefined') {
+    var isMac = /Mac/.test(navigator.platform);
+}
 var anchorToExternalRegex = new RegExp(/(<a.*?https?:\/\/.*?[^a]>)+?/g);
 
 // Mapping of actions that can be bound to keyboard shortcuts or toolbar buttons
